@@ -1,8 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import Card from "../UI/Card";
+import React from "react";
 
-function Expenses(props) {
+const Expenses = (props) => {
   const expenses = props.expenseArray;
   return (
     <Card className="expenses">
@@ -23,6 +24,6 @@ function Expenses(props) {
       ></ExpenseItem>
     </Card>
   );
-}
+};
 
 export default Expenses;
