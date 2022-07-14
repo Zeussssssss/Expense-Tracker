@@ -2,10 +2,10 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 import Card from "../UI/Card";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
   return (
     <Card className="new-expense">
-      <ExpenseForm></ExpenseForm>
+      <ExpenseForm onSaveExpense={props.onSaveExpense}></ExpenseForm>
     </Card>
   );
 };
