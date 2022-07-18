@@ -16,7 +16,8 @@ const ExpenseChart = (props) => {
   ];
   console.log(props.expenseArray.length);
   for (const exp of props.expenseArray) {
-    const month = exp.date.getMonth();
+    const date = new Date(exp.date);
+    const month = date.getMonth();
     chartData[month].value += exp.expense;
   }
   return <Chart dataCollection={chartData} />;

@@ -15,7 +15,8 @@ const Expenses = (props) => {
 
   const expenses = props.expenseArray
     .filter((exp) => {
-      return exp.date.getFullYear() === selectedYear;
+      const date = new Date(exp.date);
+      return date.getFullYear() === selectedYear;
     })
     .map((exp) => (
       <ExpenseItem
@@ -31,7 +32,8 @@ const Expenses = (props) => {
       <ExpensesFilter onYearSelect={onYearSelectHandler}></ExpensesFilter>
       <ExpenseChart
         expenseArray={props.expenseArray.filter((exp) => {
-          return exp.date.getFullYear() === selectedYear;
+          const date = new Date(exp.date);
+          return date.getFullYear() === selectedYear;
         })}
       />
       <ExpenseList expenseList={expenses} />
