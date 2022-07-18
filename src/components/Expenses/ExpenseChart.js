@@ -14,7 +14,6 @@ const ExpenseChart = (props) => {
     { label: "Nov", value: 0 },
     { label: "Dec", value: 0 },
   ];
-  console.log(props.expenseArray.length);
   for (const exp of props.expenseArray) {
     const date = new Date(exp.date);
     const month = date.getMonth();

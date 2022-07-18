@@ -7,19 +7,24 @@ import ExpenseList from "./ExpenseList";
 import ExpenseChart from "./ExpenseChart";
 
 const Expenses = (props) => {
-  const [selectedYear, setSelectedYear] = useState("0000");
+  const [selectedYear, setSelectedYear] = useState(1111);
 
   const onYearSelectHandler = (yearOption) => {
     setSelectedYear(yearOption);
   };
 
   let expenses = props.expenseArray;
-  if (selectedYear === "0000") {
+
+  //eslint-disable-next-line
+  if (selectedYear == 1111) {
     expenses = props.expenseArray;
   } else {
+    console.log(typeof selectedYear);
     expenses = props.expenseArray.filter((exp) => {
       const date = new Date(exp.date);
-      return date.getFullYear() === selectedYear;
+
+      //eslint-disable-next-line
+      return date.getFullYear() == selectedYear;
     });
   }
 

@@ -8,7 +8,7 @@ const App = () => {
   const [expenses, setExpenses] = useState([]);
 
   const cookie = new Cookies();
-  console.log(typeof cookie.get("expenses"));
+
   if (typeof cookie.get("expenses") == "undefined") {
     cookie.set("expenses", expenses, { path: "/" });
   }
