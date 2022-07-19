@@ -20,6 +20,12 @@
   width: 20rem;
   max-width: 100%;
 }
+.new-expense__control select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: 650;
+  border-radius: 6px;
+}
 
 .new-expense__actions {
   text-align: right;

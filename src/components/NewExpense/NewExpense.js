@@ -19,7 +19,7 @@ const NewExpense = (props) => {
   );
 
   if (!displayForm) {
-    displayContents = <button onClick={toggleDisplay}> Add New Expense</button>;
+    displayContents = <button onClick={toggleDisplay}>Add New Expense</button>;
   }
 
   return <Card className="new-expense">{displayContents}</Card>;

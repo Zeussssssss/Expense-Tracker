@@ -14,6 +14,7 @@ const ExpenseForm = (props) => {
   const [enteredName, setName] = useState("");
   const [enteredDate, setDate] = useState("");
   const [enteredAmount, setAmount] = useState("");
+  const [enteredCategory, setCategory] = useState("");
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -25,12 +26,17 @@ const ExpenseForm = (props) => {
     setAmount(event.target.value);
   };
 
+  const categoryChangeHandler = (event) => {
+    setCategory(event.target.value);
+  };
+
   const createExpense = (event) => {
     event.preventDefault();
     const expenseData = {
       title: enteredName,
       date: new Date(enteredDate),
       expense: +enteredAmount,
+      category: enteredCategory,
     };
 
     //2-way binding so that the form gets reset after submission
@@ -70,7 +76,18 @@ const ExpenseForm = (props) => {
             onChange={amountChangeHandler}
           ></input>
         </div>
+        <div className="new-expense__control">
+          <label>Expense Category</label>
+          <select onChange={categoryChangeHandler}>
+            <option value="E">Essentials</option>
+            <option value="R">Recurring</option>
+            <option value="I">Investments</option>
+            <option value="ET">Entertainment</option>
+            <option value="M">Miscellaneous</option>
+          </select>
+        </div>
       </div>
+      <br />
       <div className="new-expense__actions">
         <button onClick={props.onCancel}> Cancel </button>
         <button type="submit"> Add Expense </button>
