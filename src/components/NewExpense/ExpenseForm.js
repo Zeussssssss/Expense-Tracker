@@ -55,6 +55,7 @@ const ExpenseForm = (props) => {
             type="text"
             value={enteredName}
             onChange={nameChangeHandler}
+            required
           ></input>
         </div>
         <div className="new-expense__control">
@@ -64,6 +65,7 @@ const ExpenseForm = (props) => {
             min="2020-01-01"
             value={enteredDate}
             onChange={dateChangeHandler}
+            required
           ></input>
         </div>
         <div className="new-expense__control">
@@ -74,6 +76,7 @@ const ExpenseForm = (props) => {
             step="0.01"
             value={enteredAmount}
             onChange={amountChangeHandler}
+            required
           ></input>
         </div>
         <div className="new-expense__control">
