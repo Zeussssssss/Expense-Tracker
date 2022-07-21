@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-.expenses-list__fallback {
+.expenses-list__fallback,
+p {
   color: white;
   text-align: center;
   font-weight: 700;

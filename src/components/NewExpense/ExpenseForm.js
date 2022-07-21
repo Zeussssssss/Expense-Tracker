@@ -14,7 +14,7 @@ const ExpenseForm = (props) => {
   const [enteredName, setName] = useState("");
   const [enteredDate, setDate] = useState("");
   const [enteredAmount, setAmount] = useState("");
-  const [enteredCategory, setCategory] = useState("");
+  const [enteredCategory, setCategory] = useState("E");
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -28,6 +28,7 @@ const ExpenseForm = (props) => {
 
   const categoryChangeHandler = (event) => {
     setCategory(event.target.value);
+    console.log(event.target.value);
   };
 
   const createExpense = (event) => {
