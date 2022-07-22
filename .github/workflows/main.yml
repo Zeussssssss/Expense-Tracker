@@ -1,21 +1,20 @@
 name: Build and Deploy
-on: 
+on:
   push:
     branches: [main]
 
-jobs: 
+jobs:
   deploy:
     runs-on: Ubuntu 22.04 x64
-    steps: 
+    steps:
       - name: Deploy app
         uses: appleboy/ssh-action@v0.1.2
         with:
-          host:${{secrets.SSH_HOST}}
+          host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
-          
-          script:
-            mkdir test
+
+          script: mkdir test
             cd test
             git clone git@github.com:Zeussssssss/Expense-Tracker.git
             echo 'Deployed'
