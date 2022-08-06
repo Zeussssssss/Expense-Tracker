@@ -1,7 +1,7 @@
 // import { PromiseProvider } from "mongoose";
 import React from "react";
 
-import "./ExpensesFilter.css";
+import "./css/ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
   const onSelectHandler = (event) => {

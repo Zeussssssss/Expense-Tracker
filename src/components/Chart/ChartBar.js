@@ -1,4 +1,4 @@
-import "./ChartBar.css";
+import "./css/ChartBar.css";
 const ChartBar = (props) => {
   let barFillHeight = "0%";
 

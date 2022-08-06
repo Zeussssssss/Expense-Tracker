@@ -1,5 +1,5 @@
 import React from "react";
-import "./ExpenseDate.css";
+import "./css/ExpenseDate.css";
 const ExpenseDate = (props) => {
   const fullDate = new Date(props.date);
   const date = fullDate.toLocaleString("en-us", { day: "2-digit" });
