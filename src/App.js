@@ -7,24 +7,35 @@ import Cookies from "universal-cookie";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
+  const [years, setYears] = useState([]);
 
   const cookie = new Cookies();
+
+  if (typeof cookie.get("years") == "undefined") {
+    cookie.set("years", years, { path: "/" });
+  }
 
   if (typeof cookie.get("expenses") == "undefined") {
     cookie.set("expenses", expenses, { path: "/" });
   }
-  const onUpdateHandler = (arr) => {
-    cookie.set("expenses", arr, { path: "/" });
+  const onUpdateHandler = (arr, name) => {
+    cookie.set(name, arr, { path: "/" });
   };
 
   const onSaveExpenseHandler = (savedData) => {
+    console.log(years);
     const finalSavedData = {
       ...savedData,
       id: Math.random() * 100,
     };
     setExpenses((prevState) => {
       const updated = [...prevState, finalSavedData];
-      onUpdateHandler(updated);
+      onUpdateHandler(updated, "expenses");
+      return updated;
+    });
+    setYears((prevState) => {
+      const updated = [...prevState, finalSavedData.date.getFullYear()];
+      onUpdateHandler(updated, "years");
       return updated;
     });
   };
@@ -37,7 +48,10 @@ const App = () => {
     <div>
       <NewExpense onSaveExpense={onSaveExpenseHandler} />
       <NewDebt onSaveDebt={onSaveDebtHandler} />
-      <Expenses expenseArray={cookie.get("expenses")} />
+      <Expenses
+        expenseArray={cookie.get("expenses")}
+        yearArray={cookie.get("years")}
+      />
     </div>
   );
 };
