@@ -1,0 +1,33 @@
+.new-debt__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.new-debt__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.new-debt__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+.new-debt__control select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: 650;
+  border-radius: 6px;
+}
+
+.new-debt__actions {
+  text-align: right;
+  padding: 1rem 1rem;
+}
