@@ -9,7 +9,11 @@ const ExpensesFilter = (props) => {
   };
 
   const yearsToBeDisplayed = props.yearArray.sort().map((year) => {
-    return <option value={year}>{year}</option>;
+    return (
+      <option value={year} key={Math.random()}>
+        {year}
+      </option>
+    );
   });
 
   return (

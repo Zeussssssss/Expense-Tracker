@@ -54,12 +54,7 @@ const DebtForm = (props) => {
         </div>
         <div className="new-debt__control">
           <label>Deadline</label>
-          <input
-            type="date"
-            min="2020-01-01"
-            ref={enteredDeadlineRef}
-            required
-          ></input>
+          <input type="date" ref={enteredDeadlineRef} required></input>
         </div>
       </div>
       <div className="new-debt__actions">
